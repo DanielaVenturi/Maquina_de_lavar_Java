@@ -4,5 +4,8 @@ public class Main {
 
        maquina.ligar();
        maquina.ligar();
+       maquina.desligar();
+       maquina.desligar();
+       maquina.lavar();
     }
 }
