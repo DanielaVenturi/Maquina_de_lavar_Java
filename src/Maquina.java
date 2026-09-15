@@ -56,10 +56,24 @@ public class Maquina {
     }
 
 
-// public void pausar{
-//        if (estado == Estado.CENTRIFUGANDO){
-//            System.out.println("Nao da para parar enquanto a maquina estiver centrifugando");
+     public void pausarLavagem(){
+            if (estado == Estado.CENTRIFUGANDO){
+                System.out.println("Nao da para parar enquanto a maquina estiver centrifugando");
+                return;
+            }else if(estado == Estado.PAUSADA){
+                System.out.println("a maquina ja esta pausada");
+            }else{
+                estado = Estado.PAUSADA;
+                System.out.println("A maquina foi pausada");
+            }
+    }
+
+//    public void retomarLavagem(){
+//        if (estado == Estado.PAUSADA){
+//            estado = Estado.LAVANDO;
+//
 //        }
+//    }
 
     public enum Estado {
         DESLIGADA,
