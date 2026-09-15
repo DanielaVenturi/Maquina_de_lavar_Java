@@ -13,5 +13,6 @@ public class Main {
         maquina.lavar();
         maquina.abrirTampa();
         maquina.pausarLavagem();
+        maquina.retomarLavagem();
     }
 }

@@ -68,12 +68,16 @@ public class Maquina {
             }
     }
 
-//    public void retomarLavagem(){
-//        if (estado == Estado.PAUSADA){
-//            estado = Estado.LAVANDO;
-//
-//        }
-//    }
+    public void retomarLavagem(){
+        if(estado == Estado.DESLIGADA){
+            System.out.println("Uma máquina desligada não pode ser pausada.");
+        }else if (estado == Estado.PAUSADA){
+            estado = Estado.LAVANDO;
+            System.out.println("Retomando a lavagem");
+        }else{
+            System.out.println("a maquina nao esta pausada");
+        }
+    }
 
     public enum Estado {
         DESLIGADA,
