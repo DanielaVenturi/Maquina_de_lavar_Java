@@ -1,8 +1,5 @@
 public class Maquina {
-          private boolean maquinaLigada;
-          private boolean maquinaDesligada;
           private Estado estado;
-          private boolean iniciarLavagem;
           private boolean tampaFechada;
 
     public Maquina(){
@@ -38,9 +35,22 @@ public class Maquina {
             estado = Estado.LAVANDO;
             System.out.println("A maquina comecou a lavar");
         }
-
-
     }
+
+    public void abrirTampa() {
+        if(estado == Estado.CENTRIFUGANDO || estado == Estado.LAVANDO) {
+            System.out.println("Não é possivel abrir a tampa enquando ela estiver centrifugando ou lavando");
+        }else{
+            tampaFechada = true;
+            System.out.println(" A tampa foi aberta");
+        }
+    }
+
+
+// public void pausar{
+//        if (estado == Estado.CENTRIFUGANDO){
+//            System.out.println("Nao da para parar enquanto a maquina estiver centrifugando");
+//        }
 
     public enum Estado {
         DESLIGADA,
@@ -52,8 +62,8 @@ public class Maquina {
     }
 
 
-
 }
+
 
 
 

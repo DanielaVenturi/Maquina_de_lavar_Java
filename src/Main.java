@@ -7,5 +7,8 @@ public class Main {
        maquina.desligar();
        maquina.desligar();
        maquina.lavar();
+        maquina.ligar();
+        maquina.lavar();
+        maquina.
     }
 }
