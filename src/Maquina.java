@@ -46,6 +46,15 @@ public class Maquina {
         }
     }
 
+    public void fecharTampa(){
+        if (!tampaFechada){
+            tampaFechada = true;
+            System.out.println("A tampa foi fechada");
+        }else{
+            System.out.println("Atampa ja esta fechada");
+        }
+    }
+
 
 // public void pausar{
 //        if (estado == Estado.CENTRIFUGANDO){

@@ -9,6 +9,8 @@ public class Main {
        maquina.lavar();
         maquina.ligar();
         maquina.lavar();
-        maquina.
+        maquina.fecharTampa();
+        maquina.lavar();
+        maquina.abrirTampa();
     }
 }
