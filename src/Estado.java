@@ -1,4 +1,4 @@
-public class Main {
+public class Estado {
     public static void main(String[] args) {
        Maquina maquina = new Maquina();
 
@@ -14,5 +14,11 @@ public class Main {
         maquina.abrirTampa();
         maquina.pausarLavagem();
         maquina.retomarLavagem();
+        maquina.desligar();
+        maquina.concluirLavagem();
+        maquina.iniciarCentrifugacao();
+        maquina.pausarLavagem();
+maquina.concluirCentrifigacao();
+maquina.desligar();
     }
 }

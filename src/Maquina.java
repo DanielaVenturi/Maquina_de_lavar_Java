@@ -15,7 +15,9 @@ public class Maquina {
         }
     }
     public void desligar(){
-        if ( estado == Estado.LIGADA){
+        if(estado == Estado.CENTRIFUGANDO || estado == Estado.LAVANDO) {
+            System.out.println("Não é possivel desligar enquanto a maquina estiver lavando ou centrifugando");}
+        else if ( estado == Estado.LIGADA || estado == Estado.CENTRIFUGACAOCONCLUIDA){
             estado = Estado.DESLIGADA;
             System.out.println("Maquina foi Desligada");
         }else{
@@ -57,8 +59,12 @@ public class Maquina {
 
 
      public void pausarLavagem(){
-            if (estado == Estado.CENTRIFUGANDO){
-                System.out.println("Nao da para parar enquanto a maquina estiver centrifugando");
+        if(estado == Estado.DESLIGADA){
+            System.out.println("Nao é possivel pausar uma maquina desligada");
+            return;
+        }
+            else if (estado == Estado.CENTRIFUGANDO){
+                System.out.println("Nao da para pausar enquanto a maquina estiver centrifugando");
                 return;
             }else if(estado == Estado.PAUSADA){
                 System.out.println("a maquina ja esta pausada");
@@ -79,13 +85,45 @@ public class Maquina {
         }
     }
 
+    public void concluirLavagem(){
+        if(estado == Estado.LAVANDO){
+            estado = Estado.LAVAGEMCONCLUIDA;
+            System.out.println("O ciclo foi finalizado");
+        }
+    }
+
+    public void iniciarCentrifugacao(){
+        if (estado == Estado.DESLIGADA){
+            System.out.println("Não é possivel centrifugar com a maquina desligada");
+            return;
+        }
+        else if (!tampaFechada){
+            System.out.println("A maquina nao pode ligar com a tampa aberta");
+            return;}
+        else if( estado == Estado.LAVAGEMCONCLUIDA){
+        estado = Estado.CENTRIFUGANDO;
+            System.out.println("maquina esta centrifugando");
+    }else{
+            System.out.println("A centrifugação só ira iniciar quando a lavagem estiver finalizada");
+        }
+    }
+
+    public void concluirCentrifigacao(){
+        if (estado == Estado.CENTRIFUGANDO){
+            estado = Estado.CENTRIFUGACAOCONCLUIDA;
+            System.out.println("A centrifugação foi concluida");
+        }
+    }
+
+
     public enum Estado {
         DESLIGADA,
         LIGADA,
         LAVANDO,
         PAUSADA,
         CENTRIFUGANDO,
-        FINALIZADA
+        LAVAGEMCONCLUIDA,
+        CENTRIFUGACAOCONCLUIDA
     }
 
 
