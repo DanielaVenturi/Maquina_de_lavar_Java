@@ -6,7 +6,7 @@ O projeto foi desenvolvido como atividade acadêmica, com foco na aplicação de
 
 ---
 
-## Autoras
+## Alunas
 
 Projeto desenvolvido em dupla por:
 
@@ -37,6 +37,11 @@ O projeto busca demonstrar, na prática, a utilização de conceitos fundamentai
 
 ---
 
+## Diagrama URL
+[DiagramaMaquina.pdf](https://github.com/user-attachments/files/32265985/DiagramaMaquina.pdf)
+
+---
+
 ## Funcionamentos da Máquina
 
 A classe `MaquinaDeLavar` deve possuir, no mínimo, os seguintes comportamentos:
@@ -54,7 +59,7 @@ A utilização dos métodos deve representar o ciclo completo de funcionamento d
 
 ---
 
-## 📋 Regras da Atividade
+## Regras da Atividade
 
 A classe deve respeitar as seguintes regras:
 
